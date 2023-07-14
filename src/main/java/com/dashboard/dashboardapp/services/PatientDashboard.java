@@ -6,5 +6,7 @@ public class PatientDashboard {
 
         private int HeightRange;
 
+        private int BloodPressure;
+
     }
 }

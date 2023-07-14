@@ -79,6 +79,37 @@ class PatientDataTest {
             }
         }
 
+        public class BloodPressureTest {
+            @Test
+            public void testBloodPressureNormal() {
+                BloodPressure bp = new BloodPressure(120, 80);
+                assertEquals("Normal", bp.toString());
+            }
+
+            @Test
+            public void testBloodPressureHigh() {
+                BloodPressure bp = new BloodPressure(140, 90);
+                assertEquals("High", bp.toString());
+            }
+
+            @Test
+            public void testBloodPressureLow() {
+                BloodPressure bp = new BloodPressure(90, 60);
+                assertEquals("Low", bp.toString());
+            }
+
+            @Test
+            public void testBloodPressureVeryHigh() {
+                BloodPressure bp = new BloodPressure(160, 100);
+                assertEquals("Very High", bp.toString());
+            }
+
+            @Test
+            public void testBloodPressureVeryLow() {
+                BloodPressure bp = new BloodPressure(70, 50);
+                assertEquals("Very Low", bp.toString());
+            }
+        }
     }
 
 }
