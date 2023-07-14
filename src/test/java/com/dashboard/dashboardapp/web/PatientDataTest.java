@@ -55,6 +55,30 @@ class PatientDataTest {
             rs.close();
             stmt.close();
         }
+
+        public class HeightRangeTest {
+            @Test
+            public void testHeightRangeShort() {
+                HeightRange range = new HeightRange(0, 150);
+                assertEquals("Short", range.toString());
+                assertEquals(75, range.getMidpoint());
+            }
+
+            @Test
+            public void testHeightRangeAverage() {
+                HeightRange range = new HeightRange(150, 180);
+                assertEquals("Average", range.toString());
+                assertEquals(165, range.getMidpoint());
+            }
+
+            @Test
+            public void testHeightRangeTall() {
+                HeightRange range = new HeightRange(180, 300);
+                assertEquals("Tall", range.toString());
+                assertEquals(240, range.getMidpoint());
+            }
+        }
+
     }
 
 }
