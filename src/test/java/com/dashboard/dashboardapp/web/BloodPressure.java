@@ -5,5 +5,9 @@ public class BloodPressure {
 
 
     }
+
+    public String getAlert() {
+        return null;
+    }
 }
 

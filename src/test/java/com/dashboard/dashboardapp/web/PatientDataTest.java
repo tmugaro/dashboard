@@ -110,6 +110,43 @@ class PatientDataTest {
                 assertEquals("Very Low", bp.toString());
             }
         }
+
+        public class BloodPressureTestAlert {
+            @Test
+            public void testBloodPressureNormal() {
+                BloodPressure bp = new BloodPressure(120, 80);
+                assertEquals("Normal", bp.toString());
+                assertEquals("", bp.getAlert());
+            }
+
+            @Test
+            public void testBloodPressureHigh() {
+                BloodPressure bp = new BloodPressure(140, 90);
+                assertEquals("High", bp.toString());
+                assertEquals("High blood pressure detected", bp.getAlert());
+            }
+
+            @Test
+            public void testBloodPressureLow() {
+                BloodPressure bp = new BloodPressure(90, 60);
+                assertEquals("Low", bp.toString());
+                assertEquals("Low blood pressure detected", bp.getAlert());
+            }
+
+            @Test
+            public void testBloodPressureVeryHigh() {
+                BloodPressure bp = new BloodPressure(160, 100);
+                assertEquals("Very High", bp.toString());
+                assertEquals("Very high blood pressure detected. Seek medical attention immediately.", bp.getAlert());
+            }
+
+            @Test
+            public void testBloodPressureVeryLow() {
+                BloodPressure bp = new BloodPressure(70, 50);
+                assertEquals("Very Low", bp.toString());
+                assertEquals("Very low blood pressure detected. Seek medical attention immediately.", bp.getAlert());
+            }
+        }
     }
 
 }
